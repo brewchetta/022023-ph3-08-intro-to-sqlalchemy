@@ -3,11 +3,11 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from sqlalchemy_sandbox import Base, Student
+from models import Base, Student
 
 if __name__ == '__main__':
 
-    engine = create_engine('sqlite:///:memory:')
+    engine = create_engine('sqlite:///development.db')
     Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
